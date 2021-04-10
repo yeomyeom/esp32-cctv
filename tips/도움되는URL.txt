@@ -1,0 +1,17 @@
+처음 시도한 블로그
+https://www.youtube.com/watch?v=XfnwhQnh9_4
+
+응용방안
+https://www.youtube.com/watch?v=O5aQm-4xKG4
+
+iptime ddns 및 포트 포워딩
+https://luckygg.tistory.com/270
+
+ESP32-cam 홈페이지 수정 방법
+https://robotzero.one/esp32-cam-custom-html/
+
+이미지 파일에 직접 접근하는 방법
+https://esp32.com/viewtopic.php?t=10405
+
+esp32-cam 공식문서
+https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/esp_http_server.html
