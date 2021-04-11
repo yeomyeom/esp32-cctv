@@ -15,3 +15,34 @@ https://esp32.com/viewtopic.php?t=10405
 
 esp32-cam 공식문서
 https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/esp_http_server.html
+
+=============
+앱만들기
+안드로이드 웹에서 이미지 들고오기1
+https://lakue.tistory.com/35
+
+안드로이드 웹에서 이미지 들고오기2
+https://blog.naver.com/cosmosjs/220742892080
+
+안드로이드 웹에서 이미지 들고오기3
+https://velog.io/@dlrmwl15/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%9B%B9%EC%97%90%EC%84%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0
+
+버튼 클릭 리스너
+https://recipes4dev.tistory.com/55
+
+inner class 변수 상속시키기
+https://dreamaz.tistory.com/259
+
+final static 사용법
+https://ojava.tistory.com/50
+
+안드로이드 cleartext http not permitted 예외 해결 방법
+https://codechacha.com/ko/android-cleartext-http-traffic-issue/
+
+asynctask 도중에 중단 방법
+http://www.technotalkative.com/cancel-asynctask-in-android/
+
+그냥 imgviewer 에서는 처리가 안되서 깃허브에서 해당 라이브러리 받음(연구 필요)
+https://github.com/perthcpe23/android-mjpeg-view
+
+

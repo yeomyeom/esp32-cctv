@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ESP32_connector</string>
+    <string name="stream_start">cctv 실행</string>
+    <string name="stream_stop"> cctv 중지 </string>
+    <string name="app_stop"> 앱 중지 </string>
+    <string name="vertical">상하반전</string>
+    <string name="horizon">좌우반전</string>
+    <string name="toast_start_stream">start stream</string>
+    <string name="toast_stop_stream">stop stream</string>
+</resources>
