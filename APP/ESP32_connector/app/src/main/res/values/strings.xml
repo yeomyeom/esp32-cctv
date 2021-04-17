@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ESP32_connector</string>
+    <string name="app_name">[ESP32]HomeCam</string>
     <string name="stream_start">cctv 실행</string>
     <string name="stream_stop"> cctv 중지 </string>
     <string name="app_stop"> 앱 중지 </string>
@@ -7,4 +7,6 @@
     <string name="horizon">좌우반전</string>
     <string name="toast_start_stream">start stream</string>
     <string name="toast_stop_stream">stop stream</string>
+    <string name="resolution_XGA">1024x768</string>
+    <string name="resolution_VGA">640x480</string>
 </resources>

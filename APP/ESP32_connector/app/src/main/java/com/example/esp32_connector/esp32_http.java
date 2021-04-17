@@ -2,82 +2,61 @@ package com.example.esp32_connector;
 
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
+import android.util.Log;
 
+import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class esp32_http {
-    String horizon;
-    String vertical;
+public class esp32_http extends AsyncTask<Void, Void, Void>{
+    String homeUrl;
+    URL executeUrl;
+    HttpURLConnection conn;
 
-    public esp32_http(){
-        this.horizon = "0";
-        this.vertical = "0";
+    public esp32_http(String homeUrl){
+        this.homeUrl = homeUrl;
     }
 
-    public void setHorizon(){
+    public void setHorizon(String horizon){
         String url;
-        final URL _url;
-
-        if(horizon.equals("1")){
-            horizon = "0";
-            url = "http://yeomhome.iptime.org:8808/control?var=hmirror&val=0";
-        }else{
-            horizon = "1";
-            url = "http://yeomhome.iptime.org:8808/control?var=hmirror&val=1";
-        }
-        //url = String.format("http://yeomhome.iptime.org:8808/control?var=hmirror&val=%s", horizon);
+        url = String.format("%svar=hmirror&val=%s",homeUrl ,horizon);
+        setUrl(url);
+    }
+    public void setVertical(String vertical){
+        String url;
+        url = String.format("%svar=vflip&val=%s",homeUrl, vertical);
+        setUrl(url);
+    }
+    public void setResolution(String i){
+        String url;
+        url = String.format("%svar=framesize&val=%s",homeUrl, i);
+        setUrl(url);
+    }
+    public void setQuality(String i){
+        String url;
+        url = String.format("%svar=quality&val=%s",homeUrl, i);
+        setUrl(url);
+    }
+    private void setUrl(String url){
         try {
-            _url = new URL(url);
-            @SuppressLint("StaticFieldLeak")
-            AsyncTask<String, Void, Void> asyncTask = new AsyncTask<String, Void, Void>() {
-                @Override
-                protected Void doInBackground(String... strings) {
-                    HttpURLConnection conn;
-                    try {
-                        conn = (HttpURLConnection) _url.openConnection();
-                        conn.connect();
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-                    return null;
-                }
-            };
-            asyncTask.execute();
+            executeUrl = new URL(url);
         } catch (Exception e){
             e.printStackTrace();
         }
     }
-    public void setVertical(){
-        String url;
-        final URL _url;
-        if(vertical.equals("1")){
-            vertical = "0";
-            url = "http://yeomhome.iptime.org:8808/control?var=vflip&val=0";
-        }else{
-            vertical = "1";
-            url = "http://yeomhome.iptime.org:8808/control?var=vflip&val=1";
-        }
-        //url = String.format("http://yeomhome.iptime.org:8808/control?var=vflip&val=%s", vertical);
+
+    @Override
+    protected Void doInBackground(Void... voids) {
+        String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36";
         try {
-            _url = new URL(url);
-            @SuppressLint("StaticFieldLeak")
-            AsyncTask<String, Void, Void> asyncTask = new AsyncTask<String, Void, Void>() {
-                @Override
-                protected Void doInBackground(String... strings) {
-                    HttpURLConnection conn;
-                    try {
-                        conn = (HttpURLConnection) _url.openConnection();
-                        conn.connect();
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-                    return null;
-                }
-            };
-            asyncTask.execute();
-        } catch (Exception e){
+            conn = (HttpURLConnection) executeUrl.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("User-Agent", USER_AGENT);
+            conn.getInputStream();
+            //conn.connect(); //이거 말 안들음
+        } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
     }
 }

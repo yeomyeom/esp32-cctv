@@ -4,6 +4,6 @@
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">192.168.35.227</domain>
         <domain includeSubdomains="ture">yeomhome.iptime.org</domain>
-        <domain includeSubdomains="true">movie-phinf.pstatic.net</domain>
+        <domain includeSubdomains="true">192.168.35.192</domain>
     </domain-config>
 </network-security-config>
